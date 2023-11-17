@@ -20,11 +20,10 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
+vim.opt.scrolloff = 8
+
 -- SEARCH
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-
--- GENERAL
-vim.g.mapleader = " "
