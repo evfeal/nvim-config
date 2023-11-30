@@ -46,12 +46,6 @@ return {
     },
 
     {
-        'karb94/neoscroll.nvim',
-        event = "VeryLazy",
-        opts = {}
-    },
-
-    {
         "utilyre/barbecue.nvim",
         name = "barbecue",
         version = "*",
@@ -59,7 +53,6 @@ return {
             "SmiteshP/nvim-navic",
             "nvim-tree/nvim-web-devicons",
         },
-        event = "VeryLazy",
         opts = {},
     },
 
@@ -133,14 +126,25 @@ return {
     },
 
     {
-        'folke/zen-mode.nvim',
-        dependencies = "folke/twilight.nvim",
-	    cmd = "ZenMode",
-        opts = function()
-            return require 'plugins.configs.zenmode'
-        end,
-        config = function(_, opts)
-            require('zen-mode').setup(opts)
-        end,
+        "nvim-neorg/neorg",
+        build = ":Neorg sync-parsers",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        event = "VeryLazy",
+        config = function()
+            require("neorg").setup {
+                load = {
+                    ["core.defaults"] = {}, -- Loads default behaviour
+                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                    ["core.dirman"] = { -- Manages Neorg workspaces
+                    config = {
+                        workspaces = {
+                            school = "~/documents/neorg/school",
+                        },
+                    },
+                },
+            },
+        }
+    end,
     },
+
 }
