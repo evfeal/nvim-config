@@ -1,0 +1,2 @@
+-- IMPORTS
+require("plugins.lazy")

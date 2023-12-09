@@ -1,3 +1,0 @@
-return {
-    indent = { char = "│" },
-}
