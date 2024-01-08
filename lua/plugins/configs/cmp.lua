@@ -115,41 +115,49 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Lua
 require('lspconfig')['lua_ls'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    cmd = { "bun", "run", "lua-language-server", "--stdio" }
 }
 
 -- C & C++
 require('lspconfig')['clangd'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    cmd = { "bun", "run", "clangd" }
 }
 
 -- Python
 require('lspconfig')['pylsp'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    cmd = { "bun", "run", "pylsp" }
 }
 
 -- HTML & CSS
 require('lspconfig')['html'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    cmd = { "bun", "run", "vscode-html-language-server", "--stdio" }
 }
 
 require('lspconfig')['cssls'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    cmd = { "bun", "run", "vscode-css-language-server"}
 }
 
 -- JS & TS
 require('lspconfig')['tsserver'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    cmd = { "bun", "run", "typescript-language-server", "--stdio" }
 }
 
 -- Svelte
 require('lspconfig')['svelte'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    cmd = { "bun", "run", "svleteserver" }
 }
 
 -- Emmet
 require('lspconfig')['emmet_language_server'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    cmd = { "bun", "run", "emmet-language-server", "--stdio"}
 }
 
     end
